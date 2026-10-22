@@ -1,0 +1,60 @@
+# Single source for the printed sheet and the Google Form.
+# After editing questions here, run `uv run jc sync` to update the Google Form.
+# Each question has a fixed `key`. Changing the title keeps the same Google
+# field (and its past answers); changing the key creates a new field.
+
+form:
+  id: 1CojAmGozy5zqlUXp8ADA_MkEpm6kz5wPvQEUubcj4sE
+  responder_url: https://docs.google.com/forms/d/e/1FAIpQLScHy5XgqKO3IqRQWwQOfZjkqK2DuYHr2tKzCx-Gvfh3aKNvyA/viewform
+  title: GW Journal Club - Anonymous Feedback
+  description: "Anonymous: no names or emails are collected. 1 = OK, 5 = Excellent."
+
+scale:
+  low: 1
+  high: 5
+  low_label: OK
+  high_label: Excellent
+
+# kind: text | paragraph | date | scale
+# prefill: title | date  (filled from `jc make` arguments)
+# section: heading on the printed sheet (scale questions only)
+questions:
+  - key: paper
+    kind: text
+    title: Paper title
+    prefill: title
+  - key: date
+    kind: date
+    title: Date of the JC
+    prefill: date
+  - key: interest
+    kind: scale
+    section: About the paper
+    title: Was the paper interesting or relevant to you?
+  - key: clarity
+    kind: scale
+    section: About the presentation
+    title: Clarity of explanation (motivation, methods, results)
+  - key: slides
+    kind: scale
+    section: About the presentation
+    title: Slides and figures
+  - key: pacing
+    kind: scale
+    section: About the presentation
+    title: Timing and pacing
+  - key: discussion
+    kind: scale
+    section: About the presentation
+    title: Discussion (how well questions were handled)
+  - key: suggestion
+    kind: paragraph
+    title: One suggestion for improvement (optional)
+
+print:
+  heading: GW Journal Club - Anonymous Feedback
+  note: Do not write your name. Drop this in the box at the door.
+  text_color: "#000000"
+  qr_size_mm: 27
+  prefill_date: true
+  comment_lines: 3

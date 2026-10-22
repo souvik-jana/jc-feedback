@@ -1,0 +1,19 @@
+[project]
+name = "jc-feedback"
+version = "0.1.0"
+description = "GW journal club feedback: printable form, pre-filled QR, Google Form sync"
+requires-python = ">=3.10"
+dependencies = [
+    "reportlab>=4.0",
+    "qrcode[pil]>=7.4",
+    "pyyaml>=6.0",
+    "google-api-python-client>=2.100",
+    "google-auth-oauthlib>=1.2",
+]
+
+[project.scripts]
+jc = "jc_feedback.cli:run"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
