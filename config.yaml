@@ -53,7 +53,7 @@ questions:
 
 print:
   heading: GW Journal Club - Anonymous Feedback
-  note: Do not write your name. Drop this in the box at the door.
+  note: Do not write your name.
   text_color: "#000000"
   qr_size_mm: 27
   prefill_date: true
